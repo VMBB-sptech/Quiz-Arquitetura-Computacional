@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Arq-Comp</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: black;">
 
@@ -20,16 +21,16 @@
         <div style="padding: 20px;">Pergunta</div>
 
         <div class="caixa-itermédio" style="gap: 10px;">
-            <div class="caixa-menor" style="color: white;" id="reposta1">
+            <div class="caixa-menor" style="color: white;" id="reposta1" onclick="clicarBotão('AlternativaA')">
                 texto
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta2">
+            <div class="caixa-menor" style="color: white;" id="reposta2" onclick="clicarBotão('AlternativaB')">
                 texto2
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta3">
+            <div class="caixa-menor" style="color: white;" id="reposta3" onclick="clicarBotão('AlternativaC')">
                 texto3
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta4">
+            <div class="caixa-menor" style="color: white;" id="reposta4" onclick="clicarBotão('AlternativaD')">
                 texto4
             </div>
         </div>
@@ -39,50 +40,8 @@
 </body>
 </html>
 
-<style>
-.centralizar {
-    display: flex; 
-    justify-self: center;
-}
-
-.caixa-perguntas {
-    background-color: rgba(255, 255, 255, 1.0);
-    padding: 2.5%;
-    border-radius: 20px;
-    width: 60%;
-    height: 400px;
-    transition: all 0.5s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.caixa-perguntas:hover{
-    transform: scale(1.05);
-}
-
-.caixa-itermédio{
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-}
-
-.caixa-perguntas h2 {
-    margin-bottom: 15px;
-    color: black;
-}
-
-.caixa-menor{
-    background-color: black;
-    padding: 7.5px;
-    border-radius: 10px;
-    width: 100px;
-    height: 30px;  
-    transition: all 0.35s;
-    text-align: center;
-    justify-content: center;
-}
-
-.caixa-menor:hover {
-    transform: scale(1.075);
-}
-</style>
+<script>
+    function clicarBotão (resposta){
+        alert(`botão apertado foi: ${resposta}`)
+    }
+</script>
