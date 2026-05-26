@@ -1,44 +1,76 @@
 let listaPerguntas = [
     {
-        "Pegunta" : "Qual é o cérebro do computador?",
-        "AlternativaA" : "",
-        "AlternativaB" : "",
-        "AlternativaC" : "",
-        "AlternativaD" : "",
-        "RespostaCorreta" : "AlternativaB"
+        "Pergunta": "Qual é o cérebro do computador?",
+        "AlternativaA": "Memória RAM",
+        "AlternativaB": "CPU",
+        "AlternativaC": "Placa-mãe",
+        "AlternativaD": "Fonte",
+        "RespostaCorreta": "AlternativaB"
     },
     {
-        "Pegunta" : "Qual é a parte do processador encarregada exclusivamente de realizar operações matemáticas e decisões lógicas?",
-        "AlternativaA" : "oi",
-        "AlternativaB" : "oii",
-        "AlternativaC" : "oiii",
-        "AlternativaD" : "oiiii",
-        "RespostaCorreta" : "AlternativaB"
+        "Pergunta": "Qual é a parte do processador encarregada exclusivamente de realizar operações matemáticas e decisões lógicas?",
+        "AlternativaA": "Registradores",
+        "AlternativaB": "Cache",
+        "AlternativaC": "ULA",
+        "AlternativaD": "Barramento",
+        "RespostaCorreta": "AlternativaC"
     },
     {
-        "Pegunta" : "texto3",
-        "AlternativaA" : "oia",
-        "AlternativaB" : "oiia",
-        "AlternativaC" : "oiiia",
-        "AlternativaD" : "oiiiia",
-        "RespostaCorreta" : "AlternativaB"
+        "Pergunta": "Como são chamados os processadores que possuem vários núcleos físicos de processamento em um único chip para permitir o trabalho simultâneo?",
+        "AlternativaA": "Multi-core",
+        "AlternativaB": "Monocore",
+        "AlternativaC": "Single-core",
+        "AlternativaD": "Threads",
+        "RespostaCorreta": "AlternativaA"
     },
     {
-        "Pegunta" : "texto4",
-        "AlternativaA" : "",
-        "AlternativaB" : "",
-        "AlternativaC" : "",
-        "AlternativaD" : "",
-        "RespostaCorreta" : "AlternativaB"
+        "Pergunta": "Quais são as linhas de processadores fabricadas pela Intel, conhecidas pelo o Hyper-Threading?",
+        "AlternativaA": "Celeron e Pentium",
+        "AlternativaB": "Core i5 e i7",
+        "AlternativaC": "Atom e Xeon",
+        "AlternativaD": "Core i3 e Celeron",
+        "RespostaCorreta": "AlternativaB"
     },
     {
-        "Pegunta" : "texto5",
-        "AlternativaA" : "",
-        "AlternativaB" : "",
-        "AlternativaC" : "",
-        "AlternativaD" : "",
-        "RespostaCorreta" : "AlternativaB"
+        "Pergunta": "Quais são as memórias de altíssima velocidade que ficam alocadas fisicamente dentro da CPU?",
+        "AlternativaA": "Registradores",
+        "AlternativaB": "SSD",
+        "AlternativaC": "Memória RAM",
+        "AlternativaD": "HD",
+        "RespostaCorreta": "AlternativaA"
     },
+    {
+        "Pergunta": "Qual é o nome da memória principal e volátil de um computador, onde ficam guardados os dados e aplicativos que estão em uso no exato momento?",
+        "AlternativaA": "ROM",
+        "AlternativaB": "Cache L3",
+        "AlternativaC": "RAM",
+        "AlternativaD": "Memória Flash",
+        "RespostaCorreta": "AlternativaC"
+    },
+    {
+        "Pergunta": "Que tipo de memória é responsável por guardar as instruções de inicialização de fábrica, como a BIOS?",
+        "AlternativaA": "ROM",
+        "AlternativaB": "RAM",
+        "AlternativaC": "SSD",
+        "AlternativaD": "Registrador",
+        "RespostaCorreta": "AlternativaA"
+    },
+    {
+        "Pergunta": "Qual tecnologia de memória não volátil, que pode ser apagada e reescrita?",
+        "AlternativaA": "PROM",
+        "AlternativaB": "Flash",
+        "AlternativaC": "RAM",
+        "AlternativaD": "DRAM",
+        "RespostaCorreta": "AlternativaB"
+    },
+    {
+        "Pergunta": "Qual é o termo geral utilizado para descrever o armazenamento secundário de altíssima capacidade destinado a guardar arquivos de forma permanente?",
+        "AlternativaA": "Memória Volátil",
+        "AlternativaB": "Memória Cache",
+        "AlternativaC": "Memória de Massa",
+        "AlternativaD": "Registradores",
+        "RespostaCorreta": "AlternativaC"
+    }
 ]
 
 let elementoAtual = null;
@@ -49,11 +81,7 @@ let acertos = 0;
 let pergunta = 0;
 
 function clicarBotão (alternativa){
-    if (elementoAtual !== null) {
-        elementoAtual.style.backgroundColor = "black";
-        elementoAtual.style.color = "white";
-        elementoAtual.style.transform = "scale(1.0)";
-    }
+    resetarBotões();
 
     alternativa.style.backgroundColor = "yellow";
     alternativa.style.color = "black";
@@ -75,10 +103,29 @@ function responder(){
 }
 
 function proximaPergunta(){
-    textoPergunta.innerHTML = listaPerguntas[pergunta].Pegunta;
-    AlternativaA.innerHTML = listaPerguntas[pergunta].AlternativaA;
-    AlternativaB.innerHTML = listaPerguntas[pergunta].AlternativaB;
-    AlternativaC.innerHTML = listaPerguntas[pergunta].AlternativaC;
-    AlternativaD.innerHTML = listaPerguntas[pergunta].AlternativaD;
     QuestaoDisplay.innerHTML = `Questão : ${pergunta} / ${listaPerguntas.length}`;
+
+    resetarBotões();
+
+    if(pergunta < listaPerguntas.length){
+        preencherBotoes(pergunta);
+    } else {
+        alert("teste");
+    }
+}
+
+function preencherBotoes (index) {
+    textoPergunta.innerHTML = listaPerguntas[index].Pergunta;
+    AlternativaA.innerHTML = listaPerguntas[index].AlternativaA;
+    AlternativaB.innerHTML = listaPerguntas[index].AlternativaB;
+    AlternativaC.innerHTML = listaPerguntas[index].AlternativaC;
+    AlternativaD.innerHTML = listaPerguntas[index].AlternativaD;
+}
+
+function resetarBotões () {
+    if (elementoAtual !== null) {
+        elementoAtual.style.backgroundColor = "black";
+        elementoAtual.style.color = "white";
+        elementoAtual.style.transform = "scale(1.0)";
+    }
 }
