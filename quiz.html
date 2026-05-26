@@ -17,9 +17,9 @@
     
     
     <div class="caixa-perguntas centralizar">
-        <h3 id="QuestaoDisplay">texto</h3>
+        <h3 id="QuestaoDisplay">0/0</h3>
         
-        <div style="padding: 20px;">Pergunta</div>
+        <div style="padding: 20px;" id="textoPergunta">Pergunta</div>
         
         <div class="caixa-itermédio" style="gap: 10px;">
             <div class="caixa-menor" style="color: white;" id="AlternativaA" onclick="clicarBotão(this)">
@@ -38,7 +38,7 @@
                 texto4
             </div>
 
-            <div class="caixa-menor-resposta" style="color: white;">
+            <div class="caixa-menor-resposta" style="color: white;" onclick="responder()">
                 Responder
             </div>
         </div>        

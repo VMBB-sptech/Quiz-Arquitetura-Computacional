@@ -1,6 +1,6 @@
-let Perguntas = [
+let listaPerguntas = [
     {
-        "Pegunta" : "texto",
+        "Pegunta" : "Qual é o cérebro do computador?",
         "AlternativaA" : "",
         "AlternativaB" : "",
         "AlternativaC" : "",
@@ -8,19 +8,19 @@ let Perguntas = [
         "RespostaCorreta" : "AlternativaB"
     },
     {
-        "Pegunta" : "texto2",
-        "AlternativaA" : "",
-        "AlternativaB" : "",
-        "AlternativaC" : "",
-        "AlternativaD" : "",
+        "Pegunta" : "Qual é a parte do processador encarregada exclusivamente de realizar operações matemáticas e decisões lógicas?",
+        "AlternativaA" : "oi",
+        "AlternativaB" : "oii",
+        "AlternativaC" : "oiii",
+        "AlternativaD" : "oiiii",
         "RespostaCorreta" : "AlternativaB"
     },
     {
         "Pegunta" : "texto3",
-        "AlternativaA" : "",
-        "AlternativaB" : "",
-        "AlternativaC" : "",
-        "AlternativaD" : "",
+        "AlternativaA" : "oia",
+        "AlternativaB" : "oiia",
+        "AlternativaC" : "oiiia",
+        "AlternativaD" : "oiiiia",
         "RespostaCorreta" : "AlternativaB"
     },
     {
@@ -44,6 +44,10 @@ let Perguntas = [
 let elementoAtual = null;
 let respostaAtual = "";
 
+let erros = 0;
+let acertos = 0;
+let pergunta = 0;
+
 function clicarBotão (alternativa){
     if (elementoAtual !== null) {
         elementoAtual.style.backgroundColor = "black";
@@ -57,4 +61,24 @@ function clicarBotão (alternativa){
 
     elementoAtual = alternativa;
     respostaAtual = alternativa.id;
+}
+
+function responder(){
+    if (respostaAtual == listaPerguntas[pergunta].RespostaCorreta){
+        acertos ++;
+    } else {
+        erros ++;
+    }
+
+    pergunta++;
+    proximaPergunta();
+}
+
+function proximaPergunta(){
+    textoPergunta.innerHTML = listaPerguntas[pergunta].Pegunta;
+    AlternativaA.innerHTML = listaPerguntas[pergunta].AlternativaA;
+    AlternativaB.innerHTML = listaPerguntas[pergunta].AlternativaB;
+    AlternativaC.innerHTML = listaPerguntas[pergunta].AlternativaC;
+    AlternativaD.innerHTML = listaPerguntas[pergunta].AlternativaD;
+    QuestaoDisplay.innerHTML = `Questão : ${pergunta} / ${listaPerguntas.length}`;
 }
