@@ -112,6 +112,9 @@ function responder(){
 function proximaPergunta(){
     resetarBotões();
 
+    elementoAtual = null;
+    respostaAtual = "";
+
     if(pergunta < listaPerguntas.length){
         preencherBotoes(pergunta);
     } else {
@@ -178,8 +181,20 @@ function finalizarQuiz () {
 
         <span> quer tentar novamente? </span>
 
-        <div class="botaoIniciar" style="height: 12.5%;">
+        <div class="botaoIniciar" style="height: 12.5%;" onclick="tentarNovamente()";>
             Tente Novamente
         </div>
     `;
+}
+
+function tentarNovamente () {
+
+    elementoAtual = null;
+    respostaAtual = "";
+
+    pergunta = 0;
+    erros = 0;
+    acertos = 0;
+
+    iniciarQuiz();
 }
