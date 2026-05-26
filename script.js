@@ -146,23 +146,23 @@ function iniciarQuiz() {
     <div style="padding: 20px;" id="textoPergunta">Pergunta</div>
         
         <div class="caixa-itermédio" style="gap: 10px;">
-            <div class="caixa-menor" style="color: white;" id="AlternativaA" onclick="clicarBotão(this)">
+            <div class="caixa-menor" style="color: white; cursor: pointer;" id="AlternativaA" onclick="clicarBotão(this)">
                 texto
             </div>
 
-            <div class="caixa-menor" style="color: white;" id="AlternativaB" onclick="clicarBotão(this)">
+            <div class="caixa-menor" style="color: white; cursor: pointer;" id="AlternativaB" onclick="clicarBotão(this)">
                 texto2
             </div>
 
-            <div class="caixa-menor" style="color: white;" id="AlternativaC" onclick="clicarBotão(this)">
+            <div class="caixa-menor" style="color: white; cursor: pointer;" id="AlternativaC" onclick="clicarBotão(this)">
                 texto3
             </div>
 
-            <div class="caixa-menor" style="color: white;" id="AlternativaD" onclick="clicarBotão(this)">
+            <div class="caixa-menor" style="color: white; cursor: pointer;" id="AlternativaD" onclick="clicarBotão(this)">
                 texto4
             </div>
 
-            <div class="caixa-menor-resposta" style="color: white;" onclick="responder()">
+            <div class="caixa-menor-resposta" style="color: white; cursor: pointer;" onclick="responder()">
                 Responder
             </div>
         </div> 
@@ -181,7 +181,7 @@ function finalizarQuiz () {
 
         <span> quer tentar novamente? </span>
 
-        <div class="botaoIniciar" style="height: 12.5%;" onclick="tentarNovamente()";>
+        <div class="botaoIniciar" style="height: 12.5%; margin-top: 10px;" onclick="tentarNovamente()";>
             Tente Novamente
         </div>
     `;

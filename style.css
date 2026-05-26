@@ -17,18 +17,20 @@ body {
 }
 
 .caixa-perguntas {
-    background-color: rgba(255, 255, 255, 1.0);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 2.5%;
     border-radius: 20px;
-    width: 60%;
+    width: 30%;
     height: 400px;
     transition: all 0.5s;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: justify;
 }
 .caixa-perguntas:hover{
+    background-color: rgba(255, 255, 255, 1.0);
     transform: scale(1.05);
 }
 
@@ -77,7 +79,7 @@ body {
 }
 
 .selecionado {
-    background-color: yellow !important;
+    background-color: yellow;
 }
 
 .botaoIniciar {
