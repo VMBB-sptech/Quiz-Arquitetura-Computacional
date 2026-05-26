@@ -6,42 +6,44 @@
     <title>Quiz Arq-Comp</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: black;">
 
+<body style="background-color: black;">
+    
     <div class="centralizar">
         <h1 style="color: white;">
             Quiz bacana
         </h1>
     </div>
-
+    
     
     <div class="caixa-perguntas centralizar">
         <h3 id="QuestaoDisplay">texto</h3>
-
+        
         <div style="padding: 20px;">Pergunta</div>
-
+        
         <div class="caixa-itermédio" style="gap: 10px;">
-            <div class="caixa-menor" style="color: white;" id="reposta1" onclick="clicarBotão('AlternativaA')">
+            <div class="caixa-menor" style="color: white;" id="AlternativaA" onclick="clicarBotão(this)">
                 texto
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta2" onclick="clicarBotão('AlternativaB')">
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaB" onclick="clicarBotão(this)">
                 texto2
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta3" onclick="clicarBotão('AlternativaC')">
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaC" onclick="clicarBotão(this)">
                 texto3
             </div>
-            <div class="caixa-menor" style="color: white;" id="reposta4" onclick="clicarBotão('AlternativaD')">
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaD" onclick="clicarBotão(this)">
                 texto4
             </div>
-        </div>
-        
-    </div>
-    
+
+            <div class="caixa-menor-resposta" style="color: white;">
+                Responder
+            </div>
+        </div>        
+    </div> 
 </body>
 </html>
 
-<script>
-    function clicarBotão (resposta){
-        alert(`botão apertado foi: ${resposta}`)
-    }
-</script>
+<script src="script.js"></script>

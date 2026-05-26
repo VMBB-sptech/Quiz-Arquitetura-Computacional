@@ -33,8 +33,8 @@
     background-color: black;
     padding: 7.5px;
     border-radius: 10px;
-    width: 100px;
-    height: 30px;  
+    width: 90%;
+    height: 80%;  
     transition: all 0.35s;
     text-align: center;
     justify-content: center;
@@ -42,4 +42,23 @@
 
 .caixa-menor:hover {
     transform: scale(1.075);
+}
+
+.caixa-menor-resposta{
+    background-color: black;
+    padding: 7.5px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;  
+    transition: all 0.35s;
+    text-align: center;
+    justify-content: center;
+}
+
+.caixa-menor-resposta:hover {
+    transform: scale(1.075);
+}
+
+.selecionado {
+    background-color: yellow !important;
 }
