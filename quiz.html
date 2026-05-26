@@ -15,11 +15,22 @@
 
     
     <div class="caixa-perguntas centralizar">
-        <h2>texto</h2>
+        <h3 id="QuestaoDisplay">texto</h3>
 
-        <div class="caixa-itermédio">
-            <div class="caixa-menor" style="color: white;">
+        <div style="padding: 20px;">Pergunta</div>
+
+        <div class="caixa-itermédio" style="gap: 10px;">
+            <div class="caixa-menor" style="color: white;" id="reposta1">
                 texto
+            </div>
+            <div class="caixa-menor" style="color: white;" id="reposta2">
+                texto2
+            </div>
+            <div class="caixa-menor" style="color: white;" id="reposta3">
+                texto3
+            </div>
+            <div class="caixa-menor" style="color: white;" id="reposta4">
+                texto4
             </div>
         </div>
         
@@ -62,5 +73,16 @@
 
 .caixa-menor{
     background-color: black;
+    padding: 7.5px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;  
+    transition: all 0.35s;
+    text-align: center;
+    justify-content: center;
+}
+
+.caixa-menor:hover {
+    transform: scale(1.075);
 }
 </style>
