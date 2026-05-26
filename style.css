@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 .caixa-perguntas:hover{
     transform: scale(1.05);
@@ -36,11 +37,13 @@
     width: 90%;
     height: 80%;  
     transition: all 0.35s;
-    text-align: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .caixa-menor:hover {
+    background-color: rgb(168, 168, 20);
     transform: scale(1.075);
 }
 
@@ -51,8 +54,9 @@
     width: 100px;
     height: 30px;  
     transition: all 0.35s;
-    text-align: center;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .caixa-menor-resposta:hover {
@@ -61,4 +65,22 @@
 
 .selecionado {
     background-color: yellow !important;
+}
+
+.botaoIniciar {
+    display: flex;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    width: 40%;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.35s;
+}
+
+.botaoIniciar:hover {
+    transform: scale(1.075);
+    color: black;
+    background-color: yellow;
 }

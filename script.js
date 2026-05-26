@@ -139,8 +139,8 @@ function resetarBotões () {
 function iniciarQuiz() {
     divMaior.innerHTML = `
     <h3 id="QuestaoDisplay">Questão : 0/0</h3>
-        
-        <div style="padding: 20px;" id="textoPergunta">Pergunta</div>
+
+    <div style="padding: 20px;" id="textoPergunta">Pergunta</div>
         
         <div class="caixa-itermédio" style="gap: 10px;">
             <div class="caixa-menor" style="color: white;" id="AlternativaA" onclick="clicarBotão(this)">
@@ -170,5 +170,16 @@ function iniciarQuiz() {
 
 function finalizarQuiz () {
     divMaior.innerHTML = `
+        <span>Parabens!! você acertou ${(acertos/ (acertos + erros) * 100).toFixed(0)}% do Quiz</span>
+
+        <span> Acertos: ${acertos}</span> 
+        
+        <span> Erros: ${erros}</span>
+
+        <span> quer tentar novamente? </span>
+
+        <div class="botaoIniciar" style="height: 12.5%;">
+            Tente Novamente
+        </div>
     `;
 }
