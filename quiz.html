@@ -5,37 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Arq-Comp</title>
 </head>
-<body style="background-color: cyan;">
+<body style="background-color: black;">
 
     <div class="centralizar">
-        <h1>
-            Div Central
+        <h1 style="color: white;">
+            Quiz bacana
         </h1>
     </div>
 
     
-    <div class="caixa-perguntas centralizar" style="background-color: black; color: white;">
-        caixa dahoramano
+    <div class="caixa-perguntas centralizar">
+        <h2>texto</h2>
+
+        <div class="caixa-itermédio">
+            <div class="caixa-menor" style="color: white;">
+                texto
+            </div>
+        </div>
+        
     </div>
     
 </body>
 </html>
 
 <style>
-    .centralizar {
-        display: flex; 
-        justify-self: center;
-    }
+.centralizar {
+    display: flex; 
+    justify-self: center;
+}
 
-    .caixa-perguntas {
-        padding: 2.5%;
-        border-radius: 20px;
-        width: 60%;
-        height: 400px;
-        transition: all 0.5s;
-    }
+.caixa-perguntas {
+    background-color: rgba(255, 255, 255, 1.0);
+    padding: 2.5%;
+    border-radius: 20px;
+    width: 60%;
+    height: 400px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.caixa-perguntas:hover{
+    transform: scale(1.05);
+}
 
-    .caixa-perguntas:hover{
-        transform: scale(1.05);
-    }
+.caixa-itermédio{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.caixa-perguntas h2 {
+    margin-bottom: 15px;
+    color: black;
+}
+
+.caixa-menor{
+    background-color: black;
+}
 </style>
