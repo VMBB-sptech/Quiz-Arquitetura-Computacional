@@ -92,29 +92,35 @@ function clicarBotão (alternativa){
 }
 
 function responder(){
-    if (respostaAtual == listaPerguntas[pergunta].RespostaCorreta){
-        acertos ++;
-    } else {
-        erros ++;
-    }
 
-    pergunta++;
-    proximaPergunta();
+    if(respostaAtual == null || respostaAtual == ""){
+        alert(`selecione pelo menos uma alternativa!`);
+    } else {
+        if (respostaAtual == listaPerguntas[pergunta].RespostaCorreta){
+            acertos ++;
+        } else {
+            erros ++;
+        }
+
+        if(pergunta < listaPerguntas.length){
+            pergunta++;
+        }
+        proximaPergunta();
+    }
 }
 
 function proximaPergunta(){
-    QuestaoDisplay.innerHTML = `Questão : ${pergunta} / ${listaPerguntas.length}`;
-
     resetarBotões();
 
     if(pergunta < listaPerguntas.length){
         preencherBotoes(pergunta);
     } else {
-        alert("teste");
+        finalizarQuiz();
     }
 }
 
 function preencherBotoes (index) {
+    QuestaoDisplay.innerHTML = `Questão : ${pergunta + 1} / ${listaPerguntas.length}`;
     textoPergunta.innerHTML = listaPerguntas[index].Pergunta;
     AlternativaA.innerHTML = listaPerguntas[index].AlternativaA;
     AlternativaB.innerHTML = listaPerguntas[index].AlternativaB;
@@ -128,4 +134,41 @@ function resetarBotões () {
         elementoAtual.style.color = "white";
         elementoAtual.style.transform = "scale(1.0)";
     }
+}
+
+function iniciarQuiz() {
+    divMaior.innerHTML = `
+    <h3 id="QuestaoDisplay">Questão : 0/0</h3>
+        
+        <div style="padding: 20px;" id="textoPergunta">Pergunta</div>
+        
+        <div class="caixa-itermédio" style="gap: 10px;">
+            <div class="caixa-menor" style="color: white;" id="AlternativaA" onclick="clicarBotão(this)">
+                texto
+            </div>
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaB" onclick="clicarBotão(this)">
+                texto2
+            </div>
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaC" onclick="clicarBotão(this)">
+                texto3
+            </div>
+
+            <div class="caixa-menor" style="color: white;" id="AlternativaD" onclick="clicarBotão(this)">
+                texto4
+            </div>
+
+            <div class="caixa-menor-resposta" style="color: white;" onclick="responder()">
+                Responder
+            </div>
+        </div> 
+    `;
+
+    preencherBotoes(0);
+}
+
+function finalizarQuiz () {
+    divMaior.innerHTML = `
+    `;
 }
